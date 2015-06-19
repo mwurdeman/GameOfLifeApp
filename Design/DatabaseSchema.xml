@@ -37,7 +37,7 @@
 		<type label="SET" length="1" sql="SET" quote=""/>
 		<type label="Bit" length="0" sql="bit" quote=""/>
 	</group>
-</datatypes><table x="130" y="144" name="Store">
+</datatypes><table x="43" y="108" name="Store">
 <row name="StoreID" null="0" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -48,7 +48,7 @@
 <part>StoreID</part>
 </key>
 </table>
-<table x="350" y="119" name="Location">
+<table x="123" y="220" name="Location">
 <row name="LocationID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -78,8 +78,8 @@
 <part>LocationID</part>
 </key>
 </table>
-<table x="610" y="271" name="OfferDetail">
-<row name="OfferDetailID" null="1" autoincrement="1">
+<table x="362" y="314" name="Offer">
+<row name="OfferID" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
@@ -89,37 +89,20 @@
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>OfferDetailID</part>
-</key>
-</table>
-<table x="608" y="115" name="TableRelation">
-<row name="TableRelationID" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="TableName" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
-<part>TableRelationID</part>
-</key>
-</table>
-<table x="906" y="167" name="Offer">
-<row name="OfferID" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="TableRelationID" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="TableRelation" row="TableRelationID" />
-</row>
-<row name="OfferDetailID" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="OfferDetail" row="OfferDetailID" />
-</row>
-<row name="StoreLocationID" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<key type="PRIMARY" name="">
 <part>OfferID</part>
+</key>
+</table>
+<table x="288" y="182" name="LocationOffer">
+<row name="LocationID" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Location" row="LocationID" />
+</row>
+<row name="OfferID" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Offer" row="OfferID" />
+</row>
+<key type="PRIMARY" name="">
+<part>LocationID</part>
 </key>
 </table>
 </sql>
