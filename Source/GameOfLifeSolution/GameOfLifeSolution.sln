@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.WebApi", "GameOf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.WebApi.Tests", "GameOfLife.WebApi.Tests\GameOfLife.WebApi.Tests.csproj", "{4E2C289B-D497-47D7-A28A-262B9CA4593D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.InMemoryDataAccess", "GameOfLife.InMemoryDataAccess\GameOfLife.InMemoryDataAccess.csproj", "{FCD50C18-F8DF-4FFA-9C47-8EB0E21FA713}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.ServiceLayer.Tests", "GameOfLife.ServiceLayer.Tests\GameOfLife.ServiceLayer.Tests.csproj", "{2EA8E0A6-1FFF-46B5-AC24-831300AB6E22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,8 +43,19 @@ Global
 		{4E2C289B-D497-47D7-A28A-262B9CA4593D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E2C289B-D497-47D7-A28A-262B9CA4593D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E2C289B-D497-47D7-A28A-262B9CA4593D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD50C18-F8DF-4FFA-9C47-8EB0E21FA713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD50C18-F8DF-4FFA-9C47-8EB0E21FA713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD50C18-F8DF-4FFA-9C47-8EB0E21FA713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD50C18-F8DF-4FFA-9C47-8EB0E21FA713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA8E0A6-1FFF-46B5-AC24-831300AB6E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA8E0A6-1FFF-46B5-AC24-831300AB6E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA8E0A6-1FFF-46B5-AC24-831300AB6E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA8E0A6-1FFF-46B5-AC24-831300AB6E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal
