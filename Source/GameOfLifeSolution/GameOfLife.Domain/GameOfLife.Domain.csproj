@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Location.cs" />
     <Compile Include="Offer.cs" />
+    <Compile Include="OfferDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ILocationRepository.cs" />
     <Compile Include="Repositories\IOfferRepository.cs" />

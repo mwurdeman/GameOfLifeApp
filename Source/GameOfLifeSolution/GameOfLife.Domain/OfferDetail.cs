@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameOfLife.Domain
 {
-    public class Offer
+    public class OfferDetail : Offer
     {
-        public int OfferID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string DaysOfWeek { get; set; }
     }
 }
