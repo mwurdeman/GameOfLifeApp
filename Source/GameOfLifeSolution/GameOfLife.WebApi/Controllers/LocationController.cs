@@ -42,16 +42,19 @@ namespace GameOfLife.WebApi.Controllers
         // POST: api/Location
         public void Post([FromBody]string value)
         {
+            throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotImplemented));
         }
 
         // PUT: api/Location/5
         public void Put(int id, [FromBody]string value)
         {
+            throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotImplemented));
         }
 
         // DELETE: api/Location/5
         public void Delete(int id)
         {
+            throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotImplemented));
         }
     }
 }
