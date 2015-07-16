@@ -256,6 +256,10 @@
       <Project>{18f37ff1-c106-4e12-8a5b-c1823a7ab551}</Project>
       <Name>GameOfLife.ServiceLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GameOfLife.SqlDataAccess\GameOfLife.SqlDataAccess.csproj">
+      <Project>{5713e3db-c4fb-42dd-8035-722b08c27a6f}</Project>
+      <Name>GameOfLife.SqlDataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

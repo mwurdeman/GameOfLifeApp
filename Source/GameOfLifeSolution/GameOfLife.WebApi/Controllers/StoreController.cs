@@ -1,4 +1,5 @@
-﻿using GameOfLife.Domain.Repositories;
+﻿using GameOfLife.Domain;
+using GameOfLife.Domain.Repositories;
 using GameOfLife.ServiceLayer;
 using System;
 using System.Collections.Generic;
@@ -19,15 +20,23 @@ namespace GameOfLife.WebApi.Controllers
         }
 
         // GET: api/Store
-        public IEnumerable<string> Get()
+        public IEnumerable<Store> Get()
         {
-            return new string[] { "value1", "value2" };
+            return this._storeService.GetAllStores();
         }
 
         // GET: api/Store/5
-        public string Get(int id)
+        public Store Get(int id)
         {
-            return "value";
+            Store store;
+            store = this._storeService.GetStoreByID(id);
+
+            if(store == null)
+            {
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
+            }
+
+            return store;
         }
 
         // POST: api/Store

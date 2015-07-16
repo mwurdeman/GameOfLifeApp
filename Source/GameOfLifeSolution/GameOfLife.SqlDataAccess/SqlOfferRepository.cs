@@ -26,7 +26,8 @@ namespace GameOfLife.SqlDataAccess
             Offer offer = null;
 
             StringBuilder sql = new StringBuilder();
-            sql.Append("SELECT OfferID as OfferID, Name as Name, Description as Description ");
+            sql.Append("SELECT OfferID as OfferID, Name as Name, Details as Description ");
+            sql.Append("FROM Offer ");
             sql.Append("WHERE OfferID = @offerID");
 
             DbCommand cmd = this._database.GetSqlStringCommand(sql.ToString());
@@ -57,7 +58,8 @@ namespace GameOfLife.SqlDataAccess
             List<Offer> offers = new List<Offer>();
 
             StringBuilder sql = new StringBuilder();
-            sql.Append("SELECT OfferID as OfferID, Name as Name, Description as Description ");
+            sql.Append("SELECT OfferID as OfferID, Name as Name, Details as Description ");
+            sql.Append("FROM Offer");
 
             DbCommand cmd = this._database.GetSqlStringCommand(sql.ToString());
 

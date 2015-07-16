@@ -5,6 +5,9 @@ namespace GameOfLife.WebApi.App_Start
     using System.Web.Http;
     using SimpleInjector;
     using SimpleInjector.Integration.WebApi;
+    using System.Configuration;
+    using GameOfLife.Domain.Repositories;
+    using GameOfLife.SqlDataAccess;
 
     public class SimpleInjectorWebApiInitializer
     {
@@ -16,7 +19,7 @@ namespace GameOfLife.WebApi.App_Start
 
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
-            //container.Verify();
+            container.Verify();
 
             GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
         }
@@ -25,6 +28,11 @@ namespace GameOfLife.WebApi.App_Start
         {
             // For instance:
             // container.RegisterWebApiRequest<IUserRepository, SqlUserRepository>();
+            string connectionString = ConfigurationManager.ConnectionStrings["GameOfLife"].ToString();
+
+            container.RegisterWebApiRequest<ILocationRepository>(() => new SqlLocationRepository(connectionString));
+            container.RegisterWebApiRequest<IOfferRepository>(() => new SqlOfferRepository(connectionString));
+            container.RegisterWebApiRequest<IStoreRepository>(() => new SqlStoreRepository(connectionString));
         }
     }
 }

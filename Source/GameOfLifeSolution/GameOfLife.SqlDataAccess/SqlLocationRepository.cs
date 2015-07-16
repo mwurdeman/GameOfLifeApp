@@ -77,8 +77,7 @@ namespace GameOfLife.SqlDataAccess
             sql.Append(", L.Address1, L.Address2, L.City, L.State, L.ZipCode ");
             sql.Append("FROM Location L ");
             sql.Append("JOIN Store S ON S.StoreID = L.StoreID ");
-            sql.Append("WHERE L.LocationID = @locationID ");
-
+            
             DbCommand cmd = this._database.GetSqlStringCommand(sql.ToString());
 
             try
