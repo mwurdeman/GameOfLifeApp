@@ -28,7 +28,7 @@ namespace GameOfLife.WebApi.App_Start
         {
             // For instance:
             // container.RegisterWebApiRequest<IUserRepository, SqlUserRepository>();
-            string connectionString = ConfigurationManager.ConnectionStrings["GameOfLife"].ToString();
+            string connectionString = ConfigurationManager.ConnectionStrings["GameOfLifeDatabase"].ToString();
 
             container.RegisterWebApiRequest<ILocationRepository>(() => new SqlLocationRepository(connectionString));
             container.RegisterWebApiRequest<IOfferRepository>(() => new SqlOfferRepository(connectionString));
