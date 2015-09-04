@@ -29,8 +29,9 @@ namespace GameOfLife.ServiceLayer
 
         public IEnumerable<Location> GetLocationsWithOffers(string dayOfWeek)
         {
+            string validDayOfWeek = this.GetValidDayOfWeek(dayOfWeek);
             List<Location> locations = this._locationRepository.GetAllLocations() as List<Location>;
-            return locations.Where(x => x.Offers.Count(y => y.DaysOfWeek.Contains(dayOfWeek)) > 0);
+            return locations.Where(x => x.Offers.Count(y => y.DaysOfWeek.Contains(validDayOfWeek)) > 0);
         }
 
         public IEnumerable<Location> GetLocationsByStoreID(int storeID)
@@ -56,6 +57,55 @@ namespace GameOfLife.ServiceLayer
         public void DeleteLocation(Location location)
         {
             this._locationRepository.DeleteLocation(location);
+        }
+
+        private string GetValidDayOfWeek(string inputtedDayOfWeek)
+        {
+            string validDayOfWeek = "";
+
+            switch (inputtedDayOfWeek)
+            {
+                case "Monday":
+                case "Mon":
+                case "Mo":
+                    validDayOfWeek = "Mo";
+                    break;
+                case "Tuesday":
+                case "Tues":
+                case "Tu":
+                    validDayOfWeek = "Tu";
+                    break;
+                case "Wednesday":
+                case "Wed":
+                case "We":
+                    validDayOfWeek = "We";
+                    break;
+                case "Thursday":
+                case "Thur":
+                case "Th":
+                    validDayOfWeek = "Th";
+                    break;
+                case "Friday":
+                case "Fri":
+                case "Fr":
+                    validDayOfWeek = "Fr";
+                    break;
+                case "Saturday":
+                case "Sat":
+                case "Sa":
+                    validDayOfWeek = "Sa";
+                    break;
+                case "Sunday":
+                case "Sun":
+                case "Su":
+                    validDayOfWeek = "Su";
+                    break;
+                default:
+                    validDayOfWeek = "XXX";
+                    break;
+            }
+
+            return validDayOfWeek;
         }
     }
 }

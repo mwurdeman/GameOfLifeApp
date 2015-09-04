@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace GameOfLife.WebApi.Controllers
 {
+    [RoutePrefix("api/Location")]
     public class LocationController : ApiController
     {
         private readonly LocationService _locationService;
@@ -20,12 +21,14 @@ namespace GameOfLife.WebApi.Controllers
         }
 
         // GET: api/Location
+        [Route("")]
         public IEnumerable<Location> Get()
         {
             return this._locationService.GetAllLocations();
         }
 
         // GET: api/Location/5
+        [Route("{id:int}")]
         public Location Get(int id)
         {
             Location location;
@@ -33,10 +36,25 @@ namespace GameOfLife.WebApi.Controllers
 
             if (location == null)
             {
-                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NoContent));
             }
            
             return location;
+        }
+
+        //GET: api/Location/Mo
+        [Route("{dayOfWeek}")]
+        public IEnumerable<Location> GetLocationsByDayOfWeek(string dayOfWeek)
+        {
+            IEnumerable<Location> locations; // = new List<Location>();
+            locations = this._locationService.GetLocationsWithOffers(dayOfWeek);
+            
+            if (locations.Count() == 0)
+            {
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NoContent));
+            }
+
+            return locations;
         }
 
         // POST: api/Location
