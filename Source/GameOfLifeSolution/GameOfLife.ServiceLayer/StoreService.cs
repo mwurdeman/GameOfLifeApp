@@ -19,7 +19,8 @@ namespace GameOfLife.ServiceLayer
 
         public Store GetStoreByID(int storeID)
         {
-            return this._storeRepository.GetStoreByID(storeID);
+            Store store = this._storeRepository.GetStoreByID(storeID);
+            return store;
         }
 
         public IEnumerable<Store> GetAllStores()

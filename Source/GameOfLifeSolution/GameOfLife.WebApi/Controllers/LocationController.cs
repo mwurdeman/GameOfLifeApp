@@ -36,25 +36,10 @@ namespace GameOfLife.WebApi.Controllers
 
             if (location == null)
             {
-                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NoContent));
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NotFound));
             }
            
             return location;
-        }
-
-        //GET: api/Location/Mo
-        [Route("{dayOfWeek}")]
-        public IEnumerable<Location> GetLocationsByDayOfWeek(string dayOfWeek)
-        {
-            IEnumerable<Location> locations; // = new List<Location>();
-            locations = this._locationService.GetLocationsWithOffers(dayOfWeek);
-            
-            if (locations.Count() == 0)
-            {
-                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.NoContent));
-            }
-
-            return locations;
         }
 
         // POST: api/Location

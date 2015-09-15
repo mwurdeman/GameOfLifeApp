@@ -49,6 +49,7 @@
     <Compile Include="Repositories\IOfferRepository.cs" />
     <Compile Include="Repositories\IStoreRepository.cs" />
     <Compile Include="Store.cs" />
+    <Compile Include="StoreLocationViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -46,7 +46,7 @@ namespace GameOfLife.SqlDataAccess
                     store.Name = reader.GetString("StoreName");
 
                     location = new Location();
-                    location.Store = store;
+                    //location.Store = store;
                     location.LocationID = reader.GetInt32("LocationID");
                     location.Name = reader.GetString("LocationName");
                     location.Address1 = reader.GetString("Address1");
@@ -91,7 +91,7 @@ namespace GameOfLife.SqlDataAccess
                     Store store = new Store();
                     store.StoreID = reader.GetInt32("StoreID");
                     store.Name = reader.GetString("StoreName");
-                    location.Store = store;
+                    //location.Store = store;
 
                     location.LocationID = reader.GetInt32("LocationID");
                     location.Name = reader.GetString("LocationName");

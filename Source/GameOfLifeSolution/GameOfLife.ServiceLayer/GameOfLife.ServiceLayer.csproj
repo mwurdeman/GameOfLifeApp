@@ -42,6 +42,7 @@
     <Compile Include="LocationService.cs" />
     <Compile Include="OfferService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreLocationService.cs" />
     <Compile Include="StoreService.cs" />
   </ItemGroup>
   <ItemGroup>
