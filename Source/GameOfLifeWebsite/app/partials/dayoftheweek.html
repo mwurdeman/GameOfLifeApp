@@ -1,0 +1,31 @@
+<div class="divBody">
+    <div>
+        <button ng-click="changeDay(-1)">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+        </button>
+
+        {{ DayOfWeek }}
+
+        <button ng-click="changeDay(1)">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+    </div>
+    <div ng-show="NoData">No Locations have specials for {{DayOfWeek}}</div>
+    <div ng-repeat="storeLoc in StoreLocations" ng-hide="NoData">
+        <div class="storeHeader">
+            Store: {{ storeLoc.StoreName }}
+        </div>
+        <div class="storeDetail">
+            <p>Location: {{storeLoc.LocationName}}</p>
+            <address>
+                {{storeLoc.LocationAddress}}
+            </address>
+            <div class="offerHeader">
+                Offers
+            </div>
+            <div class="offerDetail">
+                {{ storeLoc.OfferDetails }}
+            </div>
+        </div>
+    </div>
+</div>

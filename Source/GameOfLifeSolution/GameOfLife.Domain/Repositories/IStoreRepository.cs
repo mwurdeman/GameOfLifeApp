@@ -11,6 +11,7 @@ namespace GameOfLife.Domain.Repositories
     {
         Store GetStoreByID(int storeID);
         IEnumerable<Store> GetAllStores();
+        IEnumerable<StoreLocationViewModel> GetStoreLocationViewModels();
         void AddStore(Store store);
         void DeleteStore(Store store);
         void UpdateStore(Store store);

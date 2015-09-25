@@ -27,13 +27,6 @@ namespace GameOfLife.ServiceLayer
             return this._locationRepository.GetAllLocations();
         }
 
-        //public IEnumerable<Location> GetLocationsWithOffers(string dayOfWeek)
-        //{
-        //    string validDayOfWeek = this.GetValidDayOfWeek(dayOfWeek);
-        //    List<Location> locations = this._locationRepository.GetAllLocations() as List<Location>;
-        //    return locations.Where(x => x.Offers.Count(y => y.DaysOfWeek.Contains(validDayOfWeek)) > 0);
-        //}
-
         public IEnumerable<Location> GetLocationsByStoreID(int storeID)
         {
             List<Location> locations = this._locationRepository.GetAllLocations() as List<Location>;

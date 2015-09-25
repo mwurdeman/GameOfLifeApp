@@ -147,6 +147,16 @@ INSERT INTO [dbo].[Store]
 VALUES
 ('Mellow Mushroom');
 
+INSERT INTO [dbo].[Store]
+(Name)
+VALUES
+('Ruby Tuesday');
+
+INSERT INTO [dbo].[Store]
+(Name)
+VALUES
+('Village Inn');
+
 INSERT INTO [dbo].[Offer]
 (Name, Details)
 VALUES
@@ -257,6 +267,16 @@ INSERT INTO [dbo].[Location]
 VALUES
 (10, 'Southside', '9734 Deer Lake Ct #1', '', 'Jacksonville', 'FL', '32246');
 
+INSERT INTO [dbo].[Location]
+(StoreID, Name, Address1, Address2, City, State, ZipCode)
+VALUES
+(11, 'Avenues Mall', '10300 Southside Blvd', '', 'Jacksonville', 'FL', '32256');
+
+INSERT INTO [dbo].[Location]
+(StoreID, Name, Address1, Address2, City, State, ZipCode)
+VALUES
+(12, 'San Jose', '10140 San Jose Blvd', '', 'Jacksonville', 'FL', '32214');
+
 INSERT INTO [dbo].[LocationOffer]
 (LocationID, OfferID, DaysOfWeek)
 VALUES
@@ -270,7 +290,7 @@ VALUES
 INSERT INTO [dbo].[LocationOffer]
 (LocationID, OfferID, DaysOfWeek)
 VALUES
-(3, 5, 'Sat')
+(3, 5, 'Sa')
 
 INSERT INTO [dbo].[LocationOffer]
 (LocationID, OfferID, DaysOfWeek)
@@ -290,7 +310,7 @@ VALUES
 INSERT INTO [dbo].[LocationOffer]
 (LocationID, OfferID, DaysOfWeek)
 VALUES
-(6, 1, 'Mo,Sat')
+(6, 1, 'Mo,Sa')
 
 INSERT INTO [dbo].[LocationOffer]
 (LocationID, OfferID, DaysOfWeek)
@@ -357,6 +377,15 @@ INSERT INTO [dbo].[LocationOffer]
 VALUES
 (16, 4, 'We')
 
+INSERT INTO [dbo].[LocationOffer]
+(LocationID, OfferID, DaysOfWeek)
+VALUES
+(17, 1, 'Tu')
+
+INSERT INTO [dbo].[LocationOffer]
+(LocationID, OfferID, DaysOfWeek)
+VALUES
+(18, 1, 'Mo,Tu')
 
 SELECT *
 FROM Store

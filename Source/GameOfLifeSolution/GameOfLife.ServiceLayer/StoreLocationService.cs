@@ -19,14 +19,16 @@ namespace GameOfLife.ServiceLayer
         
         public IEnumerable<StoreLocationViewModel> GetAllStoreLocationViewModel()
         {
-            throw new NotImplementedException();
+            return this._storeRepository.GetStoreLocationViewModels();
         }
 
         public IEnumerable<StoreLocationViewModel> GetStoreLocationViewModelByDay(string dayOfWeek)
         {
             string validDayOfWeek = this.GetValidDayOfWeek(dayOfWeek);
+            IEnumerable<StoreLocationViewModel> storeLocs = this._storeRepository.GetStoreLocationViewModels();
+            var storeLocVMs = storeLocs.Where(x => x.DaysOfWeek.Contains(validDayOfWeek));
 
-            throw new NotImplementedException();
+            return storeLocVMs;
         }
 
         private string GetValidDayOfWeek(string inputtedDayOfWeek)

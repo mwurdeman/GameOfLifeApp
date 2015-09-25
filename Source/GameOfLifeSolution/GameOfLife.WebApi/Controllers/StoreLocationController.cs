@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace GameOfLife.WebApi.Controllers
 {
+    [RoutePrefix("api/StoreLocation")]
     public class StoreLocationController : ApiController
     {
         private readonly StoreLocationService _storeLocationService;
